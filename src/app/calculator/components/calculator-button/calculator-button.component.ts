@@ -47,7 +47,7 @@ export class CalculatorButtonComponent {
       return;
     }
 
-    const value = this.contentValue()!.nativeElement.innerText;
+    const value = this.contentValue()!.nativeElement.textContent ?? '';
 
     this.onClick.emit(value.trim());
   }
@@ -55,7 +55,7 @@ export class CalculatorButtonComponent {
   public keyboardPressedStyle(key: string) {
     if (!this.contentValue()) return;
 
-    const value = this.contentValue()!.nativeElement.innerText;
+    const value = (this.contentValue()!.nativeElement.textContent ?? '').trim();
 
     if (value !== key) return;
 

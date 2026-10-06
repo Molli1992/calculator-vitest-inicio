@@ -1,6 +1,5 @@
 import { TestBed, ComponentFixture } from '@angular/core/testing';
 import CalculatorViewComponent from './calculator-view.component';
-import { vi } from 'vitest';
 import { Component } from '@angular/core';
 
 @Component({
