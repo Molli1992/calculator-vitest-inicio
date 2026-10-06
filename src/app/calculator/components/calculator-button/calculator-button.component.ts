@@ -1,21 +1,17 @@
 import {
-  ChangeDetectionStrategy,
   Component,
   ElementRef,
   HostBinding,
   input,
-  OnInit,
   output,
   signal,
   viewChild,
-  ViewEncapsulation,
 } from '@angular/core';
 
 @Component({
   selector: 'calculator-button',
   imports: [],
   templateUrl: './calculator-button.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrl: './calculator-button.component.css',
   host: {
     class: 'border-r border-b border-indigo-400',
@@ -41,13 +37,9 @@ export class CalculatorButtonComponent {
       typeof value === 'string' ? value === '' : value,
   });
 
-  // @HostBinding('class.is-command') get commandStyle() {
-  //   return this.isCommand();
-  // }
-
-  // @HostBinding('class.w-2/4') get commandStyle() {
-  //   return this.isDoubleSize();
-  // }
+  @HostBinding('class.is-command') get commandStyle() {
+    return this.isCommand();
+  }
 
   handleClick() {
     console.log('handleClick');

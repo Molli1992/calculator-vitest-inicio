@@ -1,18 +1,17 @@
 import { TestBed, ComponentFixture } from '@angular/core/testing';
-import { CalculatorButtonComponent } from './calculator-button.component';
-import { vi } from 'vitest';
+import { CalculatorComponent } from './calculator.component';
 
-describe('CalculatorButtonComponent', () => {
-  let fixture: ComponentFixture<CalculatorButtonComponent>;
-  let component: CalculatorButtonComponent;
+describe('CalculatorComponent', () => {
+  let fixture: ComponentFixture<CalculatorComponent>;
+  let component: CalculatorComponent;
   let compiled: HTMLElement;
 
   beforeEach(async () => {
     TestBed.configureTestingModule({
-      imports: [CalculatorButtonComponent],
+      imports: [CalculatorComponent],
     });
 
-    fixture = TestBed.createComponent(CalculatorButtonComponent);
+    fixture = TestBed.createComponent(CalculatorComponent);
     component = fixture.componentInstance;
     compiled = fixture.nativeElement as HTMLElement;
     fixture.detectChanges();

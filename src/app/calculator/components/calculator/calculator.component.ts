@@ -1,5 +1,4 @@
 import {
-  // ChangeDetectionStrategy,
   Component,
   computed,
   inject,
@@ -12,7 +11,6 @@ import { CalculatorService } from '@/calculator/services/calculator.service';
   selector: 'calculator',
   imports: [CalculatorButtonComponent],
   templateUrl: './calculator.component.html',
-  // changeDetection: ChangeDetectionStrategy.OnPush,
 
   host: {
     '(document:keyup)': 'handleKeyboardEvent($event)',
@@ -26,10 +24,6 @@ export class CalculatorComponent {
   public resultText = computed(() => this.calculatorService.resultText());
   public subResultText = computed(() => this.calculatorService.subResultText());
   public lastOperator = computed(() => this.calculatorService.lastOperator());
-
-  // get resultText() {
-  //   return this.calculatorService.resultText();
-  // }
 
   handleClick(key: string) {
     this.calculatorService.constructNumber(key);
